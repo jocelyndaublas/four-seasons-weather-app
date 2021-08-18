@@ -1,0 +1,58 @@
+body {
+  background-color: #fcf8f3;
+}
+section {
+  max-width: 600px;
+  margin: 20px auto;
+}
+h1 {
+  color: #698474;
+  text-align: right;
+  font-family: raleway;
+}
+h2 {
+  color: #698474;
+  text-align: left;
+  margin: 20px 10px;
+  font-family: raleway;
+}
+button {
+  float: right;
+  margin: 5px 10px;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #698474;
+}
+footer {
+  font-family: monospace;
+  position: fixed;
+  bottom: 0px;
+}
+.convertFahrenheit {
+  border-radius: 5px;
+  background-color: #698474;
+  padding: 5px;
+  font-size: 1rem;
+  font-family: raleway;
+  color: #fff;
+  box-shadow: 2px 2px grey;
+  transition: all 185ms ease-in-out;
+}
+.dateTime {
+  text-align: right;
+  font-family: monospace;
+}
+
+.feelsLike {
+  text-align: right;
+  font-family: monospace;
+}
+.searchBar {
+  margin-top: 90px;
+}
+.card-body {
+  color: #ffaaa5;
+  font-family: raleway;
+}
