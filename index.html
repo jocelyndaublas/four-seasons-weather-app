@@ -16,29 +16,24 @@
 </head>
 
 <body>
+  <header class="headerInfo" id="header-bar">
+    FourSeasons Weather
+  </header>
   <section>
     <div class="container">
-      <header class="headerInfo" id="header-bar">
-        FourSeasons Weather
-        <form class="searchBar" id="search-form">
-          <input type="text" id="search-input" placeholder="search city" />
-          <input type="submit" value="search" id="submitted" />
-        </form>
-      </header>
+      <form class="searchBar" id="search-form">
+        <input type="text" id="search-input" placeholder="search city" />
+        <input type="submit" value="search" id="submitted" />
+      </form>
       <h1 id="current-city">Edmonton</h1>
-      <span id="current-temperature">27°C</span>
-      <p id="weather-description">partly cloudy</p>
-      <button class="convertFahrenheit" type="button" id="unit-convertor">
-        ºC/ºF
-      </button>
-      <div class="dateTime">
-        <strong class="informationImportant" id="current-date">
-          Monday 18</strong>
-        <span id="current-time">10:11</span>
-      </div>
-      <div id="humidity">Humidity 45%</div>
+      <ul>
+        <li class="temperatureInfo" id="current-temperature">27 <a href="">°C |</a><a href=""> °F</a></li>
+        <li class="temperatureInfo" id="humidity">Humidity 45%</li>
+        <li class="temperatureInfo" id="weather-description">partly cloudy</li>
+        <li><strong class="temperatureInfo" id="current-date">
+            Monday 18</strong><span class="temperatureInfo" id="current-time"> 10:11</span></li>
+      </ul>
       <h2>5 day forecast</h2>
-
       <div class="row">
         <div class="card col" style="width: 18rem">
           <div class="card-body">
