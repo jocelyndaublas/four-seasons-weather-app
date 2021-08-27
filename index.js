@@ -38,6 +38,7 @@ function formatTime() {
   currentTime.innerHTML = `${currentHours}:${currentMinutes}`;
 }
 formatTime();
+//unit convertor
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temperature");

@@ -25,11 +25,12 @@
         <input type="text" id="search-input" placeholder="search city" />
         <input type="submit" value="search" id="submitted" />
       </form>
-      <h1 id="current-city">Edmonton</h1>
+      <h1 id="current-city">Swallow Falls</h1>
       <ul>
-        <li class="temperatureInfo" id="current-temperature">27 <a class="unit" href="">°C |</a><a href=""> °F</a></li>
-        <li class="temperatureInfo" id="humidity">Humidity 45%</li>
-        <li class="temperatureInfo" id="weather-description">partly cloudy</li>
+        <li class="temperatureInfo" > <img src="http://openweathermap.org/img/wn/10d@2x.png"  class="float-left"><span id="current-temperature">27 </span><span><a id="celcius" class="unit" href="">°C |</a><a id="fahrenheit" class="unit" href=""> °F</a></span></li>
+        <li class="temperatureInfo" ><strong>Feels like: </strong><span id="feels-like">25</span></li>
+        <li class="temperatureInfo" id="weather-description">Cloudy with a chance of meatballs</li>
+        <li class="temperatureInfo" ><strong>Humidity:</strong>60<span id="humidity"></span>%</li>
         <li class="temperatureInfo"><strong class="temperatureInfo" id="current-date">
             Monday 18 </strong> <span class="temperatureInfo" id="current-time">10:11</span></li>
       </ul>
@@ -74,8 +75,8 @@
     </div>
   </section>
   <footer>
-    Coded by Jocelyn Daublas and is
-    <a href="https://github.com/jocelyndaublas/four-seasons-weather-app">open sourced</a>
+    Coded by Jocelyn Daublas and is open source on 
+    <a href="https://github.com/jocelyndaublas/four-seasons-weather-app">github</a>
   </footer>
   <script src="index.js"></script>
 </body>

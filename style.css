@@ -49,6 +49,9 @@ footer {
   text-align: right;
   font-family: monospace;
 }
+.unit {
+  text-decoration: none;
+}
 
 .feelsLike {
   text-align: right;
@@ -64,6 +67,9 @@ footer {
 .temperatureInfo {
   list-style: none;
   font-family: monospace;
+}
+#current-temperature {
+  font-size: 48px;
 }
 #submitted {
   color: #698474;
