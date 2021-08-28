@@ -59,6 +59,11 @@ function currentWeather(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].main;
+  let iconElement = document.querySelector("#icon");
+iconElement.setAttribute(
+  "src",
+  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+);
 }
 function search(event) {
   let city = document.querySelector("#search-input").value;
@@ -66,6 +71,7 @@ function search(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(currentWeather);
 }
+
 function searchSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-input").value;
