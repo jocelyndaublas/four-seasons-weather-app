@@ -38,17 +38,6 @@ function formatTime() {
   currentTime.innerHTML = `${currentHours}:${currentMinutes}`;
 }
 formatTime();
-//unit convertor
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = 66;
-}
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = 19;
-}
 //search engine
 function currentWeather(response) {
   console.log(response);
@@ -56,6 +45,7 @@ function currentWeather(response) {
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  celsiusTemperature = response.data.main.temp;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].main;
@@ -65,13 +55,32 @@ iconElement.setAttribute(
   `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 );
 }
+//unit convertor
+function changeToFahrenheit(event){
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9 )/ 5+32;
+  temperatureElement.innerHTML= Math.round(fahrenheitTemperature);
+}
+let celsiusTemperature = null;
+
+function changeToCelsius(event){
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML= Math.round(celsiusTemperature);
+}
+let celsiusUnit = document.querySelector("#celsius");
+celsiusUnit.addEventListener("click", changeToCelsius);
+let fahrenheitUnit= document.querySelector("#fahrenheit");
+fahrenheitUnit.addEventListener("click", changeToFahrenheit);
+
+
 function search(event) {
   let city = document.querySelector("#search-input").value;
   let apiKey = "ca5da085c3334fa2974d520a9a4b8c12";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(currentWeather);
 }
-
 function searchSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-input").value;
@@ -79,3 +88,5 @@ function searchSubmit(event) {
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmit);
+
+search("Edmonton");
