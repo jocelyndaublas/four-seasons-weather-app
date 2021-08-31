@@ -38,6 +38,12 @@ function formatTime() {
   currentTime.innerHTML = `${currentHours}:${currentMinutes}`;
 }
 formatTime();
+//forecast
+function displayForecast(){
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML= "Today";
+}
+
 //search engine
 function currentWeather(response) {
   console.log(response);
@@ -88,5 +94,5 @@ function searchSubmit(event) {
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmit);
-
+displayForecast();
 search("Edmonton");

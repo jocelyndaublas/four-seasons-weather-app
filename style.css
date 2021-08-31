@@ -65,6 +65,7 @@ footer {
 .card-body {
   color: #ffaaa5;
   font-family: raleway;
+  text-align: center;
 }
 .temperatureInfo {
   list-style: none;
