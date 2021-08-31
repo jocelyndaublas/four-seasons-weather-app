@@ -35,6 +35,8 @@ function formatDate() {
 formatDate();
 function formatTime() {
   let currentTime = document.querySelector("#current-time");
+  if (currentMinutes < 10){ currentMinutes = `0${currentMinutes}`};
+  if (currentHours < 10){ currentHours = `0${currentHours}`};
   currentTime.innerHTML = `${currentHours}:${currentMinutes}`;
 }
 formatTime();
