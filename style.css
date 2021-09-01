@@ -71,6 +71,21 @@ footer {
   list-style: none;
   font-family: monospace;
 }
+.forecastDays {
+  margin-top: 20px;
+  text-align: center;
+}
+.dateForecast {
+  font-size: 20px;
+  color: #698474;
+  font-family: monospace;
+}
+.tempForecast {
+  color: #698474;
+  font-family: monospace;
+  font-size: 13px;
+}
+
 #current-temperature {
   font-size: 48px;
 }

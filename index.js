@@ -9,18 +9,18 @@ let days = [
   "Saturday",
 ];
 let months = [
-  "January",
-  "February",
-  "March",
-  "April",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
   "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sept",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
 let day = days[now.getDay()];
 let dates = now.getDate();
@@ -30,7 +30,7 @@ let currentMinutes = now.getMinutes();
 
 function formatDate() {
   let currentDate = document.querySelector("#current-date");
-  currentDate.innerHTML = `${day} ${dates}`;
+  currentDate.innerHTML = `${day},${month} ${dates}`;
 }
 formatDate();
 function formatTime() {
