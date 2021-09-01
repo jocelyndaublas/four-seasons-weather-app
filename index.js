@@ -81,6 +81,7 @@ let celsiusUnit = document.querySelector("#celsius");
 celsiusUnit.addEventListener("click", changeToCelsius);
 let fahrenheitUnit= document.querySelector("#fahrenheit");
 fahrenheitUnit.addEventListener("click", changeToFahrenheit);
+//forecast
 
 
 function search(event) {
