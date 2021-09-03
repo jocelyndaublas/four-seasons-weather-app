@@ -41,16 +41,28 @@ function formatTime() {
 }
 formatTime();
 //forecast
-function displayForecast(){
+function displayForecast(response){
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
+  let days = ["Thu","Fri","Sat"];
+  days.forEach(function (day) {
   forecastHTML = forecastHTML + `
-    <div class="col-2">
-<div id="forecast" class="dateForecast">Thu</div> <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" width="46
-"> <span class="tempForecast">18° </span>
+  <div class="col-2>
+  <div>  
+<div id="forecast" class="dateForecast">${day}</div> 
+<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" width="46
+"> 
+<span class="tempForecast">18° </span>
+</div>
 </div> `;
+});
 forecastHTML = forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates){
+  let apiKey = "ca5da085c3334fa2974d520a9a4b8c12";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayForecast);
 }
 //search engine
 function currentWeather(response) {
@@ -68,6 +80,7 @@ iconElement.setAttribute(
   "src",
   `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 );
+getForecast(response.data.coord);
 }
 //unit convertor
 function changeToFahrenheit(event){
@@ -101,7 +114,6 @@ function searchSubmit(event) {
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmit);
-displayForecast();
 search("Edmonton");
 
 
