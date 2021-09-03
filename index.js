@@ -43,9 +43,15 @@ formatTime();
 //forecast
 function displayForecast(){
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML= "Today";
+  let forecastHTML = `<div class="row">`;
+  forecastHTML = forecastHTML + `
+    <div class="col-2">
+<div id="forecast" class="dateForecast">Thu</div> <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" width="46
+"> <span class="tempForecast">18° </span>
+</div> `;
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
 }
-
 //search engine
 function currentWeather(response) {
   console.log(response);
@@ -81,9 +87,7 @@ let celsiusUnit = document.querySelector("#celsius");
 celsiusUnit.addEventListener("click", changeToCelsius);
 let fahrenheitUnit= document.querySelector("#fahrenheit");
 fahrenheitUnit.addEventListener("click", changeToFahrenheit);
-//forecast
-
-
+//current weather
 function search(event) {
   let city = document.querySelector("#search-input").value;
   let apiKey = "ca5da085c3334fa2974d520a9a4b8c12";
@@ -99,3 +103,5 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmit);
 displayForecast();
 search("Edmonton");
+
+
